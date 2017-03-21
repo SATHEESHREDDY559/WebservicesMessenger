@@ -10,6 +10,7 @@ private String message;
 private Date date;
 private String author;
 
+
 public Message() {
 	// TODO Auto-generated constructor stub
 }

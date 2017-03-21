@@ -23,8 +23,7 @@ import com.besoft.Restful.Messenger.service.MessageService;
 @Consumes(MediaType.APPLICATION_JSON)
 public class MessageResource {
 	MessageService service=new MessageService();
-	@GET
-	
+	@GET	
 public List<Message> getMessages(@BeanParam BeanFilter bfilter){	
 		if(bfilter.getYear()>0){
 			return service.getMessageByYear(bfilter.getYear());
@@ -35,21 +34,18 @@ public List<Message> getMessages(@BeanParam BeanFilter bfilter){
 		return service.getAllMessages();
 }
 	@GET
-
 	@Path("/{messageid}")
 	public Message getMessage(@PathParam("messageid") long msgid){
 		return service.getMessage(msgid);
 	}
 
-	@POST
-	
+	@POST	
 	public Message addMessageMessage (Message msg){		
 		
 		return service.addMessage(msg);	
 		
 	}
-	@PUT
-	
+	@PUT	
 	@Path("/{messageid}")
 	public Message addMessage(@PathParam("messageid") long id,Message msg){		
 		msg.setId(id);
@@ -58,11 +54,17 @@ public List<Message> getMessages(@BeanParam BeanFilter bfilter){
 		
 	}
 	
-	@DELETE
-	
+	@DELETE	
 	@Path("/{messageid}")
 	public Message delMessage(@PathParam("messageid") long msgid){
 		return service.removeMessage(msgid);
+	}
+	@GET 
+	@Path("/{messageid}/comments")
+	public CommentResources test(){
+		System.out.println("test test");
+	return	new CommentResources(); 
+		
 	}
 	
 }
