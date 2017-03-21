@@ -13,7 +13,7 @@ public class CommentResources {
 	@GET
 @Path("/{commentid}")
 	public String test2(){
-		return "new test2";
+		return "new test2 test2";
 	}
 
 }
