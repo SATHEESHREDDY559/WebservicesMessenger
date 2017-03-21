@@ -11,7 +11,7 @@ public class CommentResources {
 		return "New sub Resources";
 	}
 	@GET
-	@Path("/{comid}")
+	@Path("/{comijjjjjjd}")
 	public String test2(){
 		return "new test2";
 	}
